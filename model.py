@@ -38,3 +38,14 @@ print(accuracy_score(Y_validation, predictions))
 print(confusion_matrix(Y_validation, predictions))
 print(classification_report(Y_validation, predictions))
 
+#Model can predict iris type from data in test.csv
+testurl = "/Users/mirayadav/Documents/GitHub/classifying-iris-flowers/test.csv"
+names = ['sepal-length', 'sepal-width', 'petal-length', 'petal-width']
+testset = pandas.read_csv(testurl, names=names)
+array = testset.values
+Xtest = array[:,0:4]
+prediction = knn.predict(Xtest)
+
+print(prediction)
+
+
